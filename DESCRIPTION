@@ -19,7 +19,7 @@ Description: Scalable implementation of the Wilcoxon rank sum test and auROC sta
 License: GPL-3
 LazyData: true
 Encoding: UTF-8
-Depends: R (>= 3.4.0), Rcpp, data.table
+Depends: R (>= 3.5.0), Rcpp, data.table
 LinkingTo: Rcpp, RcppArmadillo
 biocViews:
 Imports: 
