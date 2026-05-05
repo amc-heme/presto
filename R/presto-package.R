@@ -1,9 +1,6 @@
-#' presto
+#' presto: Fast differential expression
 #'
-#' Fast differential expression
-#'
-#' @name presto
-#' @docType package
+#' @keywords internal
 #' @useDynLib presto
 #' @import Rcpp
 #' @importClassesFrom Matrix dgCMatrix dgTMatrix dgeMatrix TsparseMatrix
@@ -13,4 +10,4 @@
 #' @importFrom utils head
 #' @importFrom Rcpp evalCpp sourceCpp loadModule
 #' @importFrom rlang .data
-NULL
+"_PACKAGE"
