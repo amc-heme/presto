@@ -112,13 +112,13 @@ wilcoxauc.SingleCellExperiment <- function(
     y <- SummarizedExperiment::colData(X)[[group_by]]
 
     if (is.null(assay)) {
-        logcounts <- SingleCellExperiment::logcounts
         standard_assays <- c(
             "normcounts", "logcounts", "cpm", "tpm",
             "weights", "counts")
-        standard_assays <- factor(standard_assays, standard_assays)
-        available_assays <- names(SummarizedExperiment::assays(X))
-        available_assays <- intersect(standard_assays, available_assays)
+        available_assays <- intersect(
+            standard_assays,
+            SummarizedExperiment::assayNames(X)
+        )
         if (length(available_assays) == 0) {
             stop("No assays in SingleCellExperiment object")
         } else {
@@ -126,7 +126,7 @@ wilcoxauc.SingleCellExperiment <- function(
         }
     }
 
-    X_matrix <- eval(call(assay, X))
+    X_matrix <- SummarizedExperiment::assay(X, assay)
     wilcoxauc(X_matrix, y, groups_use)
 }
 
